@@ -10,11 +10,13 @@ import Screen3 from '../CheckScreens/Forgots/Screen3';
 import Home from '../UserScreens/Home';
 
 const Routes = () => {
+
     const Stack = createNativeStackNavigator();
+
     return (
         <Conteiner>
             <NavigationContainer>
-                <Stack.Navigator>
+                <Stack.Navigator initialRouteName='Login'>
 
                     <Stack.Screen
                         name='Login'

@@ -6,8 +6,11 @@ import { useState } from "react";
 
 //Styles
 import { Conteiner, TextBlack, TextInput, TextWhite, TouchableOpacityBackGraudWhite, TouchableOpacityWithoutStyling } from "../../../Components/Styles/styles";
+import { useNavigation } from "@react-navigation/native";
 
-export default function SignUp({ navigation }) {
+export default function SignUp() {
+
+    const navigation = useNavigation();
 
     const [name, setName] = useState([]);
     const [email, setEmail] = useState([]);
@@ -36,13 +39,10 @@ export default function SignUp({ navigation }) {
                 placeholder="Confirme sua senha"
             ></TextInput>
 
-            <TouchableOpacityBackGraudWhite onPress={() => navigation.push("Home")}>
+            <TouchableOpacityBackGraudWhite onPress={() => navigation.navigate("Login")}>
                 <TextBlack>SIGN UP</TextBlack>
             </TouchableOpacityBackGraudWhite>
 
-            <TouchableOpacityWithoutStyling onPress={() => navigation.push("Login")}>
-                <TextWhite>BACK</TextWhite>
-            </TouchableOpacityWithoutStyling>
         </Conteiner>
     )
 }

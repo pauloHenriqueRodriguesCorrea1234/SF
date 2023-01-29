@@ -1,8 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, TextInput, View } from "react-native";
 import Logo from "../../../../Components/Logo";
 import { Bar, TextTitlePassWord, Conteiner, TextInfoForgots, TouchableOpacityBackGraudWhite, TextBlack, TouchableOpacityWithoutStyling, TextWhite } from "../../../../Components/Styles/styles";
 
-const Screen2 = ({ navigation }) => {
+const Screen2 = () => {
+    const navigation = useNavigation()
     return (
         <Conteiner>
             <Logo />
@@ -19,11 +21,11 @@ const Screen2 = ({ navigation }) => {
             <TextInput style={styles.input}/>
             </View>
 
-            <TouchableOpacityBackGraudWhite onPress={() => navigation.push('Screen3')}> 
+            <TouchableOpacityBackGraudWhite onPress={() => navigation.navigate('Screen3')}> 
                 <TextBlack>Avançar</TextBlack>
             </TouchableOpacityBackGraudWhite>
 
-            <TouchableOpacityWithoutStyling onPress={() => navigation.push('Screen1')}>
+            <TouchableOpacityWithoutStyling onPress={() => navigation.goBack()}>
                 <TextWhite>Back</TextWhite>
             </TouchableOpacityWithoutStyling>
         </Conteiner>
