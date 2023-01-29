@@ -18,7 +18,7 @@ const Screen3 = ({navigation}) => {
                 <TextBlack>LOGIN</TextBlack>
             </TouchableOpacityBackGraudWhite>
 
-            <TouchableOpacityWithoutStyling>
+            <TouchableOpacityWithoutStyling onPress={() => navigation.push("Screen2")}>
                 <TextWhite>Back</TextWhite>
             </TouchableOpacityWithoutStyling>
 
