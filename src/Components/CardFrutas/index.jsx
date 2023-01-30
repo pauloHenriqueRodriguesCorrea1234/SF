@@ -1,11 +1,11 @@
 import { TextInput } from "../Styles/styles";
 import { Image, Text, View } from "./style";
 
-export default function CardFrutas({ img, productName }) {
+export default function CardFrutas(props ) {
   return (
     <View>
-      <Image source={{ uri: img }} />
-      <Text>{productName}</Text>
+      <Image/>
+      <Text>{props.data.name}</Text>
     </View>
   );
 }
