@@ -56,12 +56,11 @@ const Home = () => {
                     keyExtractor={(item) => item.id}
                     data={product}
                     renderItem={({ item }) =>
-                        <TouchableOpacity> 
+                        <TouchableOpacity>
                             <CardFrutas data={item} />
                         </TouchableOpacity>}
                 />
             }
-
 
         </Conteiner>
     )
