@@ -5,24 +5,65 @@ import { TextPoduct } from './style'
 import { useState } from "react";
 
 const Home = () => {
-    const [feed, setFeed] = useState([
-    {
-        id: '1',name:'nanana' 
-    }
+    const [product, setProduct] = useState([
+        {
+            "product": [
+                {
+                    "id": 1,
+                    "name": "Banana",
+                    "url": ""
+                },
+                {
+                    "id": 2,
+                    "name": "Maça",
+                    "url": ""
+                },
+                {
+                    "id": 3,
+                    "name": "Maça",
+                    "url": ""
+                },
+                {
+                    "id": 4,
+                    "name": "Maça",
+                    "url": ""
+                },
+                {
+                    "id": 5,
+                    "name": "Maça",
+                    "url": ""
+                },
+                {
+                    "id": 6,
+                    "name": "Maça",
+                    "url": ""
+                },
+                {
+                    "id": 7,
+                    "name": "Maça",
+                    "url": ""
+                },
+                {
+                    "id": 8,
+                    "name": "Maça",
+                    "url": ""
+                }
+            ]
+        }
     ])
-    return(
+    return (
         <Conteiner>
-           
-           <TextPoduct>PRODUCTS</TextPoduct>
 
-           <TextInput placeholder='write the product name' placeholderTextColor="#000" />
+            <TextPoduct>PRODUCTS</TextPoduct>
 
-           <TouchableOpacity>
-           <FlatList
-           data={feed}
-           renderItem={({item}) => <CardFrutas/>}
-           />
-           </TouchableOpacity>
+            <TextInput placeholder='write the product name' placeholderTextColor="#000" />
+
+            {product&& <TouchableOpacity>
+                <FlatList
+                    data={product}
+                    renderItem={({ item }) => <CardFrutas productName={item.name}/>}
+                />
+            </TouchableOpacity>}
 
 
         </Conteiner>

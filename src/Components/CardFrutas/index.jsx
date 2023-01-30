@@ -5,7 +5,7 @@ export default function CardFrutas({ img, productName }) {
   return (
     <View>
       <Image source={{ uri: img }} />
-      <Text>keibfuebfueb</Text>
+      <Text>{productName}</Text>
     </View>
   );
 }
