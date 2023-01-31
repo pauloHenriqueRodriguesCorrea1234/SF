@@ -1,12 +1,13 @@
 import { Conteiner, StatusBar } from "./AppStyle";
-import Routes from "./src/pages/Routes";
+import Routes from "./src/Routes";
 
-
-export default function App() {
+const App = () => {
     return(
         <Conteiner>
-            <StatusBar/>
+            <StatusBar barStyle="light-content"/>
             <Routes/>
         </Conteiner>
     )
 }
+
+export default App;

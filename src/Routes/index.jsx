@@ -2,12 +2,12 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { Conteiner } from './style';
 
-import Login from '../CheckScreens/Login'
-import SignUp from '../CheckScreens/SignUp'
-import Screen1 from '../CheckScreens/Forgots/Screen1'
-import Screen2 from '../CheckScreens/Forgots/Screen2';
-import Screen3 from '../CheckScreens/Forgots/Screen3';
-import Home from '../UserScreens/Home';
+import Login from '../pages/CheckScreens/Login'
+import SignUp from '../pages/CheckScreens/SignUp'
+import Screen1 from '../pages/CheckScreens/Forgots/Screen1'
+import Screen2 from '../pages/CheckScreens/Forgots/Screen2';
+import Screen3 from '../pages/CheckScreens/Forgots/Screen3';
+import Home from '../pages/UserScreens/Home';
 
 const Routes = () => {
 

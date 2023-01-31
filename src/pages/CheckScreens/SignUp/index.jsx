@@ -23,20 +23,28 @@ export default function SignUp() {
             <TextInput
                 placeholderTextColor="#FFF"
                 placeholder="Informe seu nome"
+                value={name}
+                onChangeText={(text) => setName(text)}
             ></TextInput>
             <TextInput
                 placeholderTextColor="#FFF"
                 placeholder="Informe seu E-mail"
+                value={email}
+                onChangeText={(text) => setEmail(text)}
             ></TextInput>
             <TextInput
                 placeholderTextColor="#FFF"
                 secureTextEntry={true}
                 placeholder="Escolha uma senha"
+                value={passWord}
+                onChangeText={(text) => setPassWors(text)}
             ></TextInput>
             <TextInput
                 placeholderTextColor="#FFF"
                 secureTextEntry={true}
                 placeholder="Confirme sua senha"
+                value={checkPassWord}
+                onChangeText={(text) => setCheckPassWors(text)}
             ></TextInput>
 
             <TouchableOpacityBackGraudWhite onPress={() => navigation.navigate("Login")}>

@@ -1,30 +1,74 @@
 import Logo from "../../../Components/Logo";
-import { useState } from "react";
-import { TextBlack, TextInput, TextWhite, TouchableOpacityBackGraudWhite, TouchableOpacityWithoutStyling, Conteiner } from "../../../Components/Styles/styles";
+import { useEffect, useState } from "react";
+
+import { TextBlack, TextInput, TextWhite, TouchableOpacityBackGraudWhite, TouchableOpacityWithoutStyling } from "../../../Components/Styles/styles";
 import { useNavigation } from "@react-navigation/native";
+import app from "../../../config/firebase";
+import { KeyboardAvoidingView, ViewError, TextError } from "./style"
+import { Platform, View } from "react-native";
 
 const Login = () => {
 
-    const navigation = useNavigation()
-    const [name, setName] = useState([]);
-    const [passWord, setPassWors] = useState([]);
+    const navigation = useNavigation();
+    const [email, setEmail] = useState('');
+    const [passWord, setPassWors] = useState('');
+    const [errorLogin, setErrorLogin] = useState('');
+
+    const loginFireBase = () => {
+
+
+    }
+
+    useEffect(() => {
+
+    }, []);
 
     return (
-        <Conteiner>
+        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? 'padding' : 'height'}>
+
             <Logo />
 
             <TextInput
                 placeholderTextColor="#FFF"
-                placeholder={"Informe seu E-mail"}
+                placeholder="Informe seu E-mail"
+                type='text'
+                value={email}
+                onChangeText={(text) => setEmail(text)}
             />
             <TextInput placeholderTextColor="#FFF"
                 secureTextEntry={true}
                 placeholder={"Informe sua senha"}
+                value={passWord}
+                onChangeText={(text) => setPassWors(text)}
             />
 
-            <TouchableOpacityBackGraudWhite onPress={() => navigation.navigate("Home")}>
-                <TextBlack>LOGIN</TextBlack>
-            </TouchableOpacityBackGraudWhite>
+
+            {/* Se errorLogin for verdadeiro entra nesta condição,
+            se o email ou senha não existir exibe uma mensagem,
+            se não não exibe nada.
+            */}
+            {errorLogin === true
+                ?
+                <ViewError>
+                    <TextError>Ivalid e-mail or password</TextError>
+                </ViewError>
+                :
+                <View />
+            }
+
+            {/* Verifica se o campo de email e senha foi preenchido se não estiver 
+            o botão de login é desabilitado
+            */}
+            {email === "" || passWord === ""
+                ?
+                <TouchableOpacityBackGraudWhite disabled={true}>
+                    <TextBlack>LOGIN</TextBlack>
+                </TouchableOpacityBackGraudWhite>
+                :
+                <TouchableOpacityBackGraudWhite onPress={() => navigation.navigate("Home")}>
+                    <TextBlack>LOGIN</TextBlack>
+                </TouchableOpacityBackGraudWhite>
+            }
 
             <TouchableOpacityWithoutStyling onPress={() => navigation.navigate("Screen1")}>
                 <TextWhite>Forgot your passWord?</TextWhite>
@@ -34,7 +78,8 @@ const Login = () => {
                 <TextWhite>SIGN UP</TextWhite>
             </TouchableOpacityWithoutStyling>
 
-        </Conteiner>
+        </KeyboardAvoidingView>
+
     )
 }
 

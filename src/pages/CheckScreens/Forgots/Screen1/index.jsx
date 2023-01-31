@@ -21,7 +21,7 @@ const Screen1 = () => {
             <Bar />
 
             <TextInfoForgots>Enter the e-mail associed with your account and we’ll send an e-mail with  instructions to reset your password.</TextInfoForgots>
-            <TextInput onChangeText={emailReset} placeholderTextColor="#FFF" placeholder="E-Mail Addres" />
+            <TextInput value={emailReset} onChangeText={setEmailReset} placeholderTextColor="#FFF" placeholder="E-Mail Addres" />
 
             <TouchableOpacityBackGraudWhite onPress={() => navigation.navigate('Screen2')}>
                 <TextBlack>Avançar</TextBlack>
