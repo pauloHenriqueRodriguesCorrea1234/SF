@@ -3,6 +3,7 @@ import { TextInput } from "../../../Components/Styles/styles"
 import { TextPoduct, Conteiner } from './style'
 import { product } from '../../../../data/product.json'
 import CardFrutas from "../../../Components/CardFrutas";
+import { TabIcons } from "../../../Components/TabIcons";
 
 const Home = () => {
     return (
@@ -22,9 +23,9 @@ const Home = () => {
                             productName={item.name}
                         />
                     </TouchableOpacity>
-
                 )}
             />
+            <TabIcons/>
 
         </Conteiner>
     )
